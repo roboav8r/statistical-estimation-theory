@@ -39,11 +39,14 @@ MATLAB scripts and a basic description of their problem are listed below. Note t
 - **ps4_p5.m**: Visualization of a Markov process function. Helper function for a derivation problem.
 - **ps4_p6.m**: Effects of step-size and in NLLS cost reduction. Shows how step size can result in convergence or divergence of error depending on how it's chosen.
 
-## Problem set 5: Kalman Filtering
+## Problem sets 5 & 6: Kalman Filtering, Square Root Information Filtering, and Smoothing
 - **ps5_p3.m**: Kalman Filtering of a linear time invariant (LTI) system with known state, measurement, and noise matrices. Plots estimated state variable values & standard deviation/variance over time.
 - **ps5_p4.m**: Same system as problem 3, but compares my computed values to MATLAB's `kalman.m`-computed values. Also checks system stability/convergence by analyzing the Eigenvalues of the error transition matrix and ensuring they have magnitude less than 1.
 - **ps5_p5.m**: Evaluating three different LTI Kalman Filters with different process noise $Q$ and measurement noise $R$ values where the true parameters are unknown. Uses Chi-squared distributions and computes the average $\epsilon_\nu$ to determine the correct model.
 - **ps5_p6.m**: Evaluating the consistency of a LTI KF. Filters are evaluated on synthetic measurement data generated via Monte Carlo simulation.
+- **ps6_p1.m**: Evaluating the consistency (like ps5_p6) of a filter that has known inconsistent parameters.
+- **ps6_p2.m**: Comparing Kalman Filter with Square Root Information Filter (SRIF) for the same linear system. Like `ps3_p2`, the SRIF performs better when matrices are not well-conditioned.
+- **ps6_p3.m**: Smoothing problem applied to the same system in `ps6_p2`. Uses Kalman Filtering, Kalman Smoothing, Information Filtering, and Information Smoothing. 
 
 
 # Known errors/needed fixes
@@ -53,9 +56,9 @@ Here are a few things I noticed on the 2022 review that I'd like to correct for 
 - Overall generalization and modularity of common functions.
 - Make constants and parameters global variables instead of function inputs.
 - Use consistent variable names across the board (e.g. sometimes Kalman gain is $W_ss$, sometimes it's just $W$ or $K$)
-- ps2_p5.m (Simple hypothesis test for two zero-mean gaussian variables with different standard deviations): Make a function that takes $\sigma_0$, $\sigma_1$, and probability of detection $P_D$ as inputs, then returns the $\sigma_D$ decision value that gives the desired detection rate, and have this be the simple heuristic ($\lt \sigma_D$ is classified as $\sigma_0$'s variable, $\gt \sigma_D$ is classified as $\sigma_1$'s variable). Also plots would work well here to show the point of the problem: vertical line at decision/hypothesis test sigma value.  
+- ps2_p5.m (Simple hypothesis test for two zero-mean gaussian variables with different standard deviations): Make a function that takes $\sigma_0$, $\sigma_1$, and probability of detection $P_D$ as inputs, then returns the $\sigma_D$ decision value that gives the desired detection rate, and have this be the simple heuristic ($\lt \sigma_D$ is classified as $\sigma_0$'s variable, $\gt \sigma_D$ is classified as $\sigma_1$'s variable). Also plots would work well here to show the point of the problem: vertical line at decision/hypothesis test sigma value.
 - ps2_bs_21.m (MAP vs. MMSE estimator) needs reworked. Gives incorrect numbers and could probably use a plot or two to really illustrate the point of the problem. Parts of it could potentially be turned into a function for reusability.
 - ps4_p4.m: Add initial measurements to charts. Label charts. 
 - Make generalized Gauss-Newton solver and matrix normalization helper functions. Use them for ps4_p3 and ps4_p4.
 - ps4_p6: Implement variable step size (alpha).
-- ps5_p5 and ps5_p6: Revisit these and explain the problem a bit more. 
+- ps5_p5 and ps5_p6: Revisit these and clearly define the problem and objectives. I don't think the Monte Carlo averaging was implemented as intended.
