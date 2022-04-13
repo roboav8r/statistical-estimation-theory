@@ -2,13 +2,14 @@
 
 Archival MATLAB code from ASE 381P: Statistical Estimation Theory at the University of Texas at Austin with Dr. Todd Humphreys.
 
-I originally took this course in Fall 2019 and reorganized/published my code in early 2022. The course had a lot of derivation (not included here), but any problems with MATLAB computation are included. Most of this is problem-specific and designed to illustrate a point about probability/estimation techniques instead of usable code (most programming languages have libraries for this nowadays...). However, it can still be used as starter code or to illustrate the inner workings of a range of estimation techniques including:
+I originally took this course in Fall 2019 and reorganized/published my code in early 2022. The course had a lot of derivation (not included here), but any problems with MATLAB computation are included. Most of this is problem-specific and designed to illustrate a point about probability/estimation techniques instead of usable code (most programming languages have libraries for this nowadays...). However, it can still be used as starter code/idea generation for a range of estimation techniques including:
 - Detection Theory/Hypothesis testing
 - Nonlinear equation solutions (Newton's method, Gauss-Newton)
 - Batch Least-Squares Estimation
 - Kalman Filtering
 - Unscented Kalman Filtering
 - Information Filtering
+- Smoothing
 - Particle Filtering
 
 Note: Course textbook was Bar-Shalom *et al*, "Estimation with Applications to Tracking and Navigation: Theory, Algorithms, and Software"
@@ -48,6 +49,11 @@ MATLAB scripts and a basic description of their problem are listed below. Note t
 - **ps6_p2.m**: Comparing Kalman Filter with Square Root Information Filter (SRIF) for the same linear system. Like `ps3_p2`, the SRIF performs better when matrices are not well-conditioned.
 - **ps6_p3.m**: Smoothing problem applied to the same system in `ps6_p2`. Uses Kalman Filtering, Kalman Smoothing, Information Filtering, and Information Smoothing. 
 
+## Problem set 7: Nonlinear Estimation & the Extended Kalman Filter
+- **ps7_p1.m**: Comparison of analyical and linearized orbit propagation models. The linearized system uses MATLAB's `ode45` propagator. The difference  in the analytical and propagated orbit radii is less than 1 percent.
+
+## Problem set 8: Multiple-Model Kalman Filters, Sigma-Point (Unscented) Filter, and Particle Filtering
+- **ps8_prob_II.m**: Sigma-Point/Unscented Kalman filter problem with comparison to EKF.
 
 # Known errors/needed fixes
 
@@ -62,3 +68,4 @@ Here are a few things I noticed on the 2022 review that I'd like to correct for 
 - Make generalized Gauss-Newton solver and matrix normalization helper functions. Use them for ps4_p3 and ps4_p4.
 - ps4_p6: Implement variable step size (alpha).
 - ps5_p5 and ps5_p6: Revisit these and clearly define the problem and objectives. I don't think the Monte Carlo averaging was implemented as intended.
+- `ps8_p1.m`, a multiple Kalman Filter problem, and `ps8_prob_III.m`, a particle filtering problem, are missing. Find and add to repo.
