@@ -16,13 +16,13 @@ Note: Course textbook was Bar-Shalom *et al*, "Estimation with Applications to T
 
 # Organization
 This repo is organized as follows:
-- `/problem-sets` and `exams` contain the problem sets & exams from the course in .PDF format.
+- `/problem-sets` and `/exams` contain the problem sets & exams from the course in .PDF format.
 - `/data` contains data for use in the problems, such as simulated measurements.
 - `/functions` contains reusable helper functions.
 - `/scripts` contains my caller scripts for the problems in the problem sets and exams. A brief description of each MATLAB problem is given in the following section.
 
 # Problem descriptions (`/scripts`)
-MATLAB scripts and a basic description of their problem are listed below. Note that ps5_p2.m refers to problem set 5, problem 2.
+MATLAB scripts and a basic description of their problem are listed below. The naming convention is that ps5_p2.m refers to problem set 5, problem 2.
 
 ## Problem set 1: Probability
 - **ps1_p8.m**: Central limit theorem/random sampling problem. As you average a higher number of uniformly sampled numbers, the resulting distribution approximates a Gaussian.
